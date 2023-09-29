@@ -1,0 +1,26 @@
+.navbar{
+    background-color: red;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+}
+
+button{
+    background-color: red;
+    border: none;
+    padding:6%;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+}
+button:hover{
+    background-color: white;
+    border: none;
+    padding: 11%;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+}
+
+.bottomBar{
+    background-color: red;
+    position: fixed;
+    bottom: 0;
+}
