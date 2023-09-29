@@ -1,0 +1,35 @@
+<div class="addCourseList">
+<h2 class="addCourse">Add a Course to the List</h2>
+<button mat-raised button (click)="addCourse()" *ngIf="buttonDisappear" class="button1">Add</button>
+<form [formGroup]="dropDownForm" *ngIf="showForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label class="form">Choose a School</label>
+        <br>
+        <select style="height:40px;font-size: 22px;" formControlName="schools" #items (change)="onSelected(items.value)">
+            <option selected></option>
+            <option *ngFor="let school of list" [ngValue]="school.label">{{school.label}}</option>
+        </select>
+    </div>
+
+    <div>
+        <label class="form">Choose a Core Requirement</label>
+        <br>
+        <select style="height:40px;font-size: 22px;" formControlName="requirements" #items2 (change)="onSelected2(items2.value)">
+            <option selected></option>
+            <option *ngFor="let requirement of selectedRequirementsList" [ngValue]="requirement.label">{{requirement.label}}</option>
+        </select>
+    </div>
+
+    <div>
+        <label class="form">Choose a Course</label>
+        <br>
+        <select style="height:40px;font-size: 22px;" formControlName="names" #items3 (change)="onSelected3(items3.value)">
+            <option selected></option>
+            <option *ngFor="let name of selectedNamesList" [ngValue]="name.label">{{name.label}}</option>
+        </select>
+    </div>
+<button mat-raised button (click)="cancel()" class="button2">Cancel</button>
+<button mat-raised button type="submit" class="button2">Submit</button>
+</form>
+</div>
+
