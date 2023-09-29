@@ -1,0 +1,22 @@
+<app-first-form (submitEvent)="receiveSubmission($event)"></app-first-form>
+<div style="height:800px;overflow-y: scroll;">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+  <ng-container matColumnDef="school">
+    <th mat-header-cell *matHeaderCellDef>School</th>
+    <td class="shorter" title="{{course.school}}" mat-cell *matCellDef="let course">{{course.school}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="requirement">
+    <th *matHeaderCellDef>Core Requirement</th>
+    <td class="shorter" title="{{course.requirement}}" mat-cell *matCellDef="let course">{{course.requirement}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Course Name</th>
+    <td class="shorter" title="{{course.name}}" mat-cell *matCellDef="let course">{{course.name}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
