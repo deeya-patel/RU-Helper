@@ -15,7 +15,16 @@ export class FirstTableComponent implements OnInit{
   dataSource: BySchoolCourses[] = [
   ];
   receiveSubmission(singleRow: BySchoolCourses){
-    this.dataSource = [...this.dataSource, singleRow];
+    const rowExists = this.dataSource.some(row => 
+      row.school === singleRow.school && 
+      row.requirement === singleRow.requirement && 
+      row.name === singleRow.name
+    );
+
+    if (!rowExists) {
+      this.dataSource = [...this.dataSource, singleRow];
+    }
+    //this.dataSource = [...this.dataSource, singleRow];
   }
   displayedColumns: string[] = ['school', 'requirement', 'name'];
 }
